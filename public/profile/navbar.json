@@ -1,7 +1,7 @@
 {
     "logo" : {
         "source": "images/logo.png",
-        "height" : 45,
+        "height" : 50,
         "width" : 50
     },
     "sections": [
@@ -10,24 +10,20 @@
             "href": "/"
         },
         {
-            "title": "About",
-            "href": "/about"
+            "title": "Projects",
+            "href": "/projects"
         },
         {
             "title": "Skills",
             "href": "/skills"
         },
         {
-            "title": "Education",
-            "href": "/education"
+            "title": "Docs",
+            "href": "/Docs"
         },
         {
-            "title": "Experience",
-            "href": "/experience"
-        },
-        {
-            "title": "Projects",
-            "href": "/projects"
+            "title": "About",
+            "href": "/about"
         },
         {
             "title": "Resume",

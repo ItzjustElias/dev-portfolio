@@ -1,0 +1,21 @@
+/* Initial styling for the navbar */
+.navbar-custom {
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Hide navbar when scrolling down */
+  .navbar-hide {
+    transform: translateY(-100%); /* Moves navbar out of view upwards */
+  }
+  
+  /* Show navbar when scrolling up */
+  .navbar-show {
+    transform: translateY(0); /* Moves navbar back into view */
+  }
+
+  @media (max-width: 768px) {
+    .navbar-mobile {
+        background-color: #343a40 !important;
+    }
+  }
+  

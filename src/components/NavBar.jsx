@@ -4,12 +4,12 @@ import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import styled, { ThemeContext } from 'styled-components';
 import endpoints from '../constants/endpoints';
-import ThemeToggler from './ThemeToggler';
+import '../css/NavBar.css';
 
 const styles = {
   logoStyle: {
     width: 50,
-    height: 40,
+    height: 50,
   },
 };
 
@@ -40,6 +40,9 @@ const NavBar = () => {
   const theme = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const [expanded, setExpanded] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState('up');
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Track mobile state
 
   useEffect(() => {
     fetch(endpoints.navbar, {
@@ -50,20 +53,43 @@ const NavBar = () => {
       .catch((err) => err);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Update mobile state on resize
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <Navbar
       fixed="top"
       expand="md"
-      bg="dark"
+      bg="transparent"
       variant="dark"
-      className="navbar-custom"
+      className={`navbar-custom ${isMobile ? 'navbar-mobile' : ''} ${scrollDirection === 'down' ? 'navbar-hide' : 'navbar-show'}`}
       expanded={expanded}
     >
       <Container>
         {data?.logo && (
           <Navbar.Brand href="/">
             <img
-              src={data?.logo?.source}
+              src={data?.logo?.source || '/images/logo.svg'}
               className="d-inline-block align-top"
               alt="main logo"
               style={
@@ -108,9 +134,6 @@ const NavBar = () => {
                 </InternalNavLink>
               )))}
           </Nav>
-          <ThemeToggler
-            onClick={() => setExpanded(false)}
-          />
         </Navbar.Collapse>
       </Container>
     </Navbar>

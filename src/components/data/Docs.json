@@ -1,0 +1,60 @@
+{
+    "projects": [
+      {
+        "id": "project-a",
+        "name": "Project A",
+        "description": "Documentation for Project A.",
+        "docs": [
+          {
+            "id": "getting-started",
+            "title": "Getting Started",
+            "content": "Instructions for getting started with Project A.",
+            "steps": [
+              {
+                "id": "install",
+                "title": "Step 1: Install",
+                "content": "Run `npm install` to install dependencies."
+              },
+              {
+                "id": "run",
+                "title": "Step 2: Run",
+                "content": "Run `npm start` to start the server."
+              }
+            ]
+          },
+          {
+            "id": "advanced-features",
+            "title": "Advanced Features",
+            "content": "Details about advanced features in Project A.",
+            "steps": [
+              {
+                "id": "feature-1",
+                "title": "Feature 1",
+                "content": "Explanation of feature 1."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "project-b",
+        "name": "Project B",
+        "description": "Documentation for Project B.",
+        "docs": [
+          {
+            "id": "getting-started-b",
+            "title": "Getting Started",
+            "content": "Instructions for getting started with Project B.",
+            "steps": [
+              {
+                "id": "install-b",
+                "title": "Step 1: Install",
+                "content": "Run `npm install` to install dependencies."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

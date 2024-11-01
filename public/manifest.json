@@ -1,11 +1,11 @@
 {
-  "short_name": "Mayank Agarwal",
-  "name": "Mayank Agarwal - Portfolio",
+  "short_name": "Elias Bloem",
+  "name": "Elias Bloem - Portfolio",
   "icons": [
     {
       "src": "images/logo.png",
       "type": "image/png",
-      "sizes": "425x225"
+      "sizes": "425x425"
     }
   ],
   "start_url": ".",
