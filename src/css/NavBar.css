@@ -15,7 +15,7 @@
 
   @media (max-width: 768px) {
     .navbar-mobile {
-        background-color: #343a40 !important;
+        background-color: #343a4035 !important;
     }
   }
   
