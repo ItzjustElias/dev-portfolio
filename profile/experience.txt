@@ -1,0 +1,6 @@
+ADD THIS SECTION TO THE NAVBAR.JSON CODE AND REMOVE WIP. FROM THE JSX
+        
+        {
+            "title": "Experience",
+            "href": "/experience"
+        },
